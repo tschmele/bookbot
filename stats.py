@@ -13,3 +13,13 @@ def get_char_count(text):
         except Exception as e:
             print(e)
     return chars
+
+def sort_on(items):
+    return items["num"]
+
+def sort_char_count(chars):
+    sorted = []
+    for c in chars:
+        sorted.append({"char": c, "num": chars[c]})
+    sorted.sort(reverse=True, key=sort_on)
+    return sorted
